@@ -157,6 +157,21 @@ dialog>div{
     grid-auto-rows: 400px;
     gap: 1rem;
 }
+
+dialog>div>button{
+    font-size: 1.5rem;
+    font-weight: 700;
+    
+}
+
+.confirm{
+    background-color: #D1FFBD;
+}
+
+.cancel{
+    background-color: #FF7074;
+}
+
 .card{
     margin: 1rem;
     padding: 3rem;
