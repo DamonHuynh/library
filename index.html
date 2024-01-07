@@ -16,16 +16,22 @@
         <form action="" method="post" id="book">
             <p id="disclaimer">Required fields are followed by <span aria-label="required">*</span></p>
 
-            <label for="name">Name <span aria-label="required">*</span></label>
-            <input type="text" name="name" id="name" required autofocus>
-
-            <label for="author">Author <span aria-label="required">*</span></label>
-            <input type="text" name="author" id="author" required>
-
-            <label for="pages">Pages <span aria-label="required">*</span></label>
-            <input type="number" name="pages" id="pages" required>
+            <div>
+                <label for="name">Name <span aria-label="required">*</span></label>
+                <input type="text" name="name" id="name" required autofocus>
+            </div>
 
             <div>
+                <label for="author">Author <span aria-label="required">*</span></label>
+                <input type="text" name="author" id="author" required>
+            </div>
+
+            <div>
+                <label for="pages">Pages <span aria-label="required">*</span></label>
+                <input type="number" name="pages" id="pages" required>
+            </div>
+
+            <div class="checkbox">
                 <label for="hasRead">Have you read it?</label>
                 <input type="checkbox" name="hasRead" id="hasRead">
             </div>

@@ -44,7 +44,7 @@ table {
 }
 :root{
     --main-background: #deedf9;
-    
+    --default-border: #cccdcfe5;
 }
 body{
     font-family: "Roboto";
@@ -99,6 +99,50 @@ form{
     justify-content: space-evenly;
     width: 300px;
     height: 400px;
+}
+
+form>p{
+    text-decoration: underline;
+    font-size: 1.25rem;
+}
+
+form>div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkbox{
+    flex-direction: row;
+    align-items: center;
+}
+
+label{
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+input{
+    border:2px solid var(--default-border);
+    border-radius: 5px;
+    height: 1.5rem;
+    font-size: 1rem;
+}
+
+input:focus{
+    outline: none;
+    border: 2px solid blue;
+    box-shadow: 1px 1px 5px grey;
+}
+
+
+input[type="checkbox"]{
+    width: 25px;
+    height: 25px;
+    accent-color: green;
+}
+
+dialog{
+    box-shadow: 1px 1px 5px grey;
 }
 
 dialog>div{
