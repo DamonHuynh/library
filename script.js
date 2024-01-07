@@ -43,11 +43,18 @@ function createBookCard(book){
     hasRead.textContent = book.hasRead;
     remove.textContent = "Remove";
     remove.addEventListener("click", () => {
-        card.remove();
-        myLibrary.splice(book.bookNum, 1);
-        console.log(myLibrary);
+        removeBook(book, card)
     });
     bookContainer.appendChild(card);
+}
+
+function removeBook(book, card){
+    card.remove();
+    myLibrary.splice(book.bookNum, 1);
+    for(let x = book.bookNum; x < myLibrary.length; x++){
+        myLibrary[x].bookNum--;
+    }
+    console.log(myLibrary);
 }
 
 addBtn.addEventListener("click", () => {
