@@ -20,9 +20,6 @@ function Book(name, author, pages, hasRead, bookNum) {
     this.bookNum = bookNum;
 }
 
-function addBookToLibrary(name, author, pages, hasRead, bookNum) {
-    myLibrary.push(new Book(name, author, pages, hasRead, bookNum));
-}
 
 function createBookCard(book){
     const card = document.createElement("div");
@@ -30,7 +27,7 @@ function createBookCard(book){
     const name = document.createElement("p");
     const author = document.createElement("p");
     const pages = document.createElement("p");
-    const hasRead = document.createElement("div");
+    const hasRead = document.createElement("button");
     const remove = document.createElement("button");
     card.appendChild(name);
     card.appendChild(author);
@@ -40,7 +37,10 @@ function createBookCard(book){
     name.textContent = `Title: ${book.name}`;
     author.textContent = `By: ${book.author}`;
     pages.textContent = `Pages: ${book.pages}`;
-    hasRead.textContent = book.hasRead;
+    hasRead.textContent =  book.hasRead ? "Read" : "Has not Read";
+    hasRead.addEventListener("click", () => {
+        changeReadStatus(book, hasRead);
+    })
     remove.textContent = "Remove";
     remove.addEventListener("click", () => {
         removeBook(book, card)
@@ -51,10 +51,16 @@ function createBookCard(book){
 function removeBook(book, card){
     card.remove();
     myLibrary.splice(book.bookNum, 1);
+    /* All of the items get pushed back, so the index needs to be updated */
     for(let x = book.bookNum; x < myLibrary.length; x++){
         myLibrary[x].bookNum--;
     }
     console.log(myLibrary);
+}
+
+function changeReadStatus(book, hasRead){
+    book.hasRead = !book.hasRead
+    hasRead.textContent = book.hasRead ? "Read" : "Has not Read";
 }
 
 addBtn.addEventListener("click", () => {
@@ -71,9 +77,10 @@ form.addEventListener("submit", (event) => {
     let name = nameForm.value;
     let author = authorForm.value;
     let pages = pagesForm.value;
-    let hasRead = hasReadForm.checked ? "Read" : "Has not Read";
-    addBookToLibrary(name, author, pages, hasRead, myLibrary.length);
-    console.log(myLibrary);
+    let hasRead = hasReadForm.checked;
+    /* Using the length of the array as the last parameter so that each 
+    book is asscioated with an index from the array*/
+    myLibrary.push(new Book(name, author, pages, hasRead, myLibrary.length));
     createBookCard(myLibrary[myLibrary.length - 1]);
     dialog.close();
 });
