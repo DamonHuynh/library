@@ -9,6 +9,8 @@ const nameForm = document.querySelector("#name");
 const authorForm = document.querySelector("#author");
 const pagesForm = document.querySelector("#pages");
 const hasReadForm = document.querySelector("#hasRead");
+const green = "#D1FFBD";
+const red = "#FF7074";
 
 
 
@@ -38,6 +40,7 @@ function createBookCard(book){
     author.textContent = `By: ${book.author}`;
     pages.textContent = `Pages: ${book.pages}`;
     hasRead.textContent =  book.hasRead ? "Read" : "Has not Read";
+    hasRead.style.backgroundColor = book.hasRead ? green : red;
     hasRead.addEventListener("click", () => {
         changeReadStatus(book, hasRead);
     })
@@ -61,6 +64,7 @@ function removeBook(book, card){
 function changeReadStatus(book, hasRead){
     book.hasRead = !book.hasRead
     hasRead.textContent = book.hasRead ? "Read" : "Has not Read";
+    hasRead.style.backgroundColor = book.hasRead ? green : red;
 }
 
 addBtn.addEventListener("click", () => {
