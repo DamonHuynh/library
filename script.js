@@ -1,5 +1,9 @@
 const myLibrary = [];
 const dialog = document.querySelector("dialog");
+const addBtn = document.querySelector(".add");
+const cancelBtn = document.querySelector(".cancel");
+
+
 
 function Book(name, author, imgUrl, pages, hasRead) {
     this.name = name;
@@ -18,3 +22,11 @@ function displayDialog(){
 function displayLatestBook(){
     
 }
+
+addBtn.addEventListener("click", () => {
+    dialog.showModal();
+});
+
+cancelBtn.addEventListener("click", () => {
+    dialog.close();
+});

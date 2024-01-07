@@ -17,7 +17,7 @@
             <p id="disclaimer">Required fields are followed by <span aria-label="required">*</span></p>
 
             <label for="name">Name <span aria-label="required">*</span></label>
-            <input type="text" name="name" id="name" required>
+            <input type="text" name="name" id="name" required autofocus>
 
             <label for="author">Author <span aria-label="required">*</span></label>
             <input type="text" name="author" id="author" required>
@@ -25,17 +25,17 @@
             <label for="imgUrl">Image URL </label>
             <input type="url" name="imgUrl" id="imgUrl">
 
-            <label for="pages">Name <span aria-label="required">*</span></label>
+            <label for="pages">Pages <span aria-label="required">*</span></label>
             <input type="number" name="pages" id="pages" required>
 
             <div>
-                <label for="hasRead">Have you read it? <span aria-label="required">*</span></label>
-                <input type="checkbox" name="hasRead" id="hasRead" required>
+                <label for="hasRead">Have you read it?</label>
+                <input type="checkbox" name="hasRead" id="hasRead">
             </div>
         </form>
         <div>
-            <button>Cancel</button>
-            <button type="submit" form="">Add Book</button>
+            <button formmethod="dialog"class="cancel">Cancel</button>
+            <button type="submit" form="book">Add Book</button>
         </div>
     </dialog>
 </body>
