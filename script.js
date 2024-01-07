@@ -11,3 +11,9 @@ function Book(name, author, imgUrl, pages, hasRead) {
 function addBookToLibrary(name, author, imgUrl, pages, hasRead) {
     myLibrary.push(new Book(name, author, imgUrl, pages, hasRead));
 }
+function displayDialog(){
+    
+}
+function displayLatestBook(){
+    
+}

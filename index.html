@@ -12,6 +12,26 @@
         <h1>Library</h1>
         <div><button class="add">+</button></div>
     </div>
-    
+    <dialog open>
+        <form action="" method="post" id="book">
+            <p id="disclaimer">Required fields are followed by <span aria-label="required">*</span></p>
+
+            <label for="name">Name <span aria-label="required">*</span></label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="author">Author <span aria-label="required">*</span></label>
+            <input type="text" name="author" id="author" required>
+
+            <label for="imgUrl">Image URL </label>
+            <input type="url" name="imgUrl" id="imgUrl">
+
+            <label for="pages">Name <span aria-label="required">*</span></label>
+            <input type="number" name="pages" id="pages" required>
+
+            <label for="hasRead">Have you read it? <span aria-label="required">*</span></label>
+            <input type="checkbox" name="hasRead" id="hasRead" required>
+        </form>
+        <button type="submit" form="book">Add Book</button>
+    </dialog>
 </body>
 </html>
