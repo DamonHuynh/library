@@ -1,4 +1,5 @@
 const myLibrary = [];
+const dialog = document.querySelector("dialog");
 
 function Book(name, author, imgUrl, pages, hasRead) {
     this.name = name;
